@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+
+
+<table class="table table-dark table-striped table-hover table-bordered border-white">
+
+  <thead>
+  <h3 class="table-text">Tracking</h3>
+    <tr>
+      <th>Course</th>
+      <th>Assignment</th>
+      <th>Center</th>
+      <th>Weight</th>
+      <th>Due date</th>
+      <th>Start date</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @trackers.each do |tracker| %>
+      <tr>
+        <td><%= tracker.course %></td>
+        <td><%= tracker.assignment %></td>
+        <td><%= tracker.center %></td>
+        <td><%= tracker.weight %></td>
+        <td><%= tracker.due_date %></td>
+        <td><%= tracker.start_date %></td>
+        <td><%= link_to 'Show', tracker %></td>
+        <td><%= link_to 'Edit', edit_tracker_path(tracker) %></td>
+        <td><%= link_to 'Delete', tracker, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Tracker', new_tracker_path %>
