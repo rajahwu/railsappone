@@ -1,0 +1,50 @@
+<%= form_with(model: tracker) do |form| %>
+  <% if tracker.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(tracker.errors.count, "error") %> prohibited this tracker from being saved:</h2>
+
+      <ul>
+        <% tracker.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+<div class="card text-white bg-dark" style="width: 18rem;"> 
+  <div class="card-title">
+  <div class="field form-group" >
+    <% form.label :course, class:'form-label' %>
+    <%= form.text_field :course, class:'form-control', placeholder:"Course" %>
+  </div>
+
+  <div class="field form-group">
+    <% form.label :assignment, class:'form-label' %>
+    <%= form.text_field :assignment, class:'form-control', placeholder:"Assignment" %>
+  </div>
+
+  <div class="field form-group">
+    <% form.label :center, class:'form-label' %>
+    <%= form.text_field :center, class:'form-control', placeholder:"Center" %>
+  </div>
+
+  <div class="field form-group">
+    <% form.label :weight, class:'form-label' %>
+    <%= form.text_field :weight, class:'form-control', placeholder:"Weight" %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label :due_date, class:'form-label' %>
+    <%= form.date_select :due_date, class:'form-control', placeholder:"Date Due" %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label :start_date, class:'form-label' %>
+    <%= form.date_select :start_date, class:'form-control', placeholder:"Date Started" %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+  </div>
+  </div>
+<% end %>

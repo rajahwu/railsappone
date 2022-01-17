@@ -1,0 +1,43 @@
+
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">
+      <strong>Assignment:</strong>
+      <%= @tracker.assignment %>
+    </h5>
+    <p class="card-text">
+  <strong>Course:</strong>
+  <%= @tracker.course %>
+</p>
+
+<p class="card-text">
+  <strong>Assignment:</strong>
+  <%= @tracker.assignment %>
+</p>
+
+<p class="card-text">
+  <strong>Center:</strong>
+  <%= @tracker.center %>
+</p>
+
+<p class="card-text">
+  <strong>Weight:</strong>
+  <%= @tracker.weight %>
+</p>
+
+<p class="card-text">
+  <strong>Due date:</strong>
+  <%= @tracker.due_date %>
+</p>
+
+<p class="card-text">
+  <strong>Start date:</strong>
+  <%= @tracker.start_date %>
+</p>
+
+<%= link_to 'Edit', edit_tracker_path(@tracker) %> |
+<%= link_to 'Back', trackers_path %>
+
+  </div>
+</div>
+
